@@ -26,7 +26,7 @@ config :trello, Trello.Endpoint,
   check_origin: false,
   cache_static_lookup: false,
   watchers: [
-    node: ["node_modules/webpack/bin/webpack.js", "--watch", "--color", cd: Path.expand("../", __DIR__)]
+    node: ["node_modules/brunch/bin/brunch", "watch", "--stdin", cd: Path.expand("../", __DIR__)]
   ]
 
 
