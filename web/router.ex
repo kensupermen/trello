@@ -19,11 +19,11 @@ defmodule Trello.Router do
     get "/", PageController, :index
   end
 
-  scope '/api', Trello do
+  scope "/api", Trello do
     pipe_through :api
 
-    scope 'v1' do
-      post '/registrations', RegistrationController, :create
+    scope "v1" do
+      post "/registrations", RegistrationController, :create
     end
 
   end

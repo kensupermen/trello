@@ -6,18 +6,24 @@ defmodule Trello.User do
     field :last_name, :string
     field :email, :string
     field :encrypted_password, :string
+    field :password, :string, virtual: true
 
     timestamps()
   end
+
+  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
+
+  @required_fields ~w(first_name last_name email password)
+  @optional_fields ~w(encrypted_password)
 
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:first_name, :last_name, :email, :encrypted_password])
+    |> cast(params, @required_fields, @optional_fields)
     |> validate_format(:email, ~r/@/)
-    |> validate_required([:first_name, :last_name, :email, :encrypted_password])
+    |> validate_confirmation(:password, message: "Password does not match")
     |> generate_encrypted_password
   end
 
