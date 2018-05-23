@@ -19,6 +19,15 @@ defmodule Trello.Router do
     get "/", PageController, :index
   end
 
+  scope '/api', Trello do
+    pipe_through :api
+
+    scope 'v1' do
+      post '/registrations', RegistrationController, :create
+    end
+
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Trello do
   #   pipe_through :api

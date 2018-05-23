@@ -20,7 +20,7 @@ defmodule Trello.Mixfile do
   def application do
     [
       mod: {Trello, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :comeonin]
     ]
   end
 
@@ -40,7 +40,9 @@ defmodule Trello.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:comeonin, "~> 2.5.3"}, # password hashing
+      {:guardian, "~> 1.0"} # authentication library
     ]
   end
 
