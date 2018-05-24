@@ -81,6 +81,8 @@ exports.config = {
     whitelist: ["phoenix", "phoenix_html", "vue"],
     globals: {
       Vue: 'vue/dist/vue.common.js',
+      $: "jquery",
+      jQuery: "jquery"
       // bootstrap: 'bootstrap-sass' // require bootstrap-sass' JavaScript globally
     }
   }
