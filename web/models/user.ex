@@ -1,6 +1,8 @@
 defmodule Trello.User do
   use Trello.Web, :model
 
+  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
+
   schema "users" do
     field :first_name, :string
     field :last_name, :string
@@ -11,8 +13,6 @@ defmodule Trello.User do
     timestamps()
   end
 
-  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
-
   @required_fields ~w(first_name last_name email password)
   @optional_fields ~w(encrypted_password)
 
@@ -20,10 +20,12 @@ defmodule Trello.User do
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
+
     struct
     |> cast(params, @required_fields, @optional_fields)
     |> validate_format(:email, ~r/@/)
     |> validate_confirmation(:password, message: "Password does not match")
+    |> unique_constraint(:email, message: "Email already taken")
     |> generate_encrypted_password
   end
 

@@ -42,7 +42,7 @@ defmodule Trello.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:comeonin, "~> 2.5.3"}, # password hashing
-      {:guardian, "~> 1.0"} # authentication library
+      {:guardian, "~> 0.14.0"} # authentication library. use 0.14.0 and not upgrade
     ]
   end
 

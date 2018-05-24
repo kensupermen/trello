@@ -20,7 +20,6 @@ defmodule Trello.RegistrationController do
         conn
         |> put_status(:unprocessable_entity)
         |> render(Trello.RegistrationView, "error.json", changeset: changeset)
-
     end
   end
 end
