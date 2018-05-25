@@ -22,7 +22,7 @@ defmodule Trello.Router do
   scope "/api", Trello do
     pipe_through :api
 
-    scope "v1" do
+    scope "/v1" do
       post "/registrations", RegistrationController, :create
     end
 
