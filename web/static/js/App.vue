@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <trello-header></trello-header>
     <div class="container">
       <h1>Welcome Vue with Phoenix!!!</h1>
     </div>
@@ -8,15 +9,12 @@
 
 <script>
 
-// import TheHeader from './components/TheHeader';
+import TrelloHeader from './components/TrelloHeader';
 
 export default {
-  name: 'App'
-  // components: {
-  //   TheHeader
-  // }
+  name: 'App',
+  components: {
+    TrelloHeader
+  }
 };
 </script>
-
-<style lang="scss">
-</style>
