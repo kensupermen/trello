@@ -9,12 +9,16 @@ body {
   min-height: 4rem;
   padding-top: 15px;
   margin-bottom: 15px;
+
+  .right-side {
+    float: right;
+  }
 }
 
 #login-form {
   /* setup form at center of screen */
   position: absolute;
-  height: 250px;
+  height: 400px;
   width: 600px;
   margin: auto;
   padding: 10px;
@@ -27,4 +31,8 @@ body {
     border: none;
     border-bottom: 1px solid #d2d2ff;
   }
+}
+
+.logo {
+  width: 30px;
 }
