@@ -10,3 +10,21 @@ body {
   padding-top: 15px;
   margin-bottom: 15px;
 }
+
+#login-form {
+  /* setup form at center of screen */
+  position: absolute;
+  height: 250px;
+  width: 600px;
+  margin: auto;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #d2d2ff;
+  }
+}
