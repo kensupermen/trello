@@ -10,7 +10,8 @@
 
 <script>
 import axios from 'axios';
-import { AuthService } from '../services/api.service.js';
+import { AuthService } from '../services/api.service';
+import { LOGIN } from '../store/modules/user';
 
 export default {
   name: 'Login',
@@ -27,9 +28,13 @@ export default {
   methods: {
     login() {
       let params = { session: {email: this.credentials.email, password: this.credentials.password }};
-      AuthService.post(params).then(response => {
-        console.log(response);
-      });
+      // AuthService.post(params).then(response => {
+      //   console.log(response);
+      // });
+      // this.$store.dispath(LOGIN, params)
+      //   .then(() =>
+              // this.$router.push({ name: '/'});
+             // )
     },
     
     signup() {
