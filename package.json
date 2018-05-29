@@ -31,6 +31,8 @@
     "bootstrap": "^4.0.0-alpha.6",
     "brunch": "^2.10.12",
     "css-loader": "^0.28.11",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
     "node-sass": "^4.9.0",
     "sass-brunch": "^2.10.4",
     "sass-loader": "^7.0.1",
