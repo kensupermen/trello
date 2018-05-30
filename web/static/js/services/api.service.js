@@ -6,11 +6,11 @@ axios.defaults.baseURL = API_URL;
 
 const ApiService = {
     get(resource, slug = '') {
-        return axios.get(resource);
+      return axios.get(resource);
     },
 
     post(resource, params) {
-        return axios.post(resource, params);
+      return axios.post(resource, params);
     }
 
 }

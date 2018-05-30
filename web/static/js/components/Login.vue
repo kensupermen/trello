@@ -10,7 +10,6 @@
 
 <script>
 import axios from 'axios';
-import { AuthService } from '../services/api.service';
 import { LOGIN, LOGOUT } from '../store/actions.type';
 
 export default {
@@ -31,10 +30,10 @@ export default {
       // AuthService.post(params).then(response => {
       //   console.log(response);
       // });
-      this.$store.dispatch(LOGIN, params).then((data) => 
+      this.$store.dispatch(LOGIN, params).then(() =>
         this.$router.push({ name: '/'})
       );
-              
+
 
     },
 
