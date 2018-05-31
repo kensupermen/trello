@@ -27,14 +27,9 @@ export default {
   methods: {
     login() {
       let params = { email: this.credentials.email, password: this.credentials.password };
-      // AuthService.post(params).then(response => {
-      //   console.log(response);
-      // });
       this.$store.dispatch(LOGIN, params).then(() =>
         this.$router.push({ name: '/'})
       );
-
-
     },
 
     signup() {

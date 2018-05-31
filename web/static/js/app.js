@@ -7,10 +7,19 @@ import Vuex from 'vuex';
 
 import router from './router.js';
 import store from './store';
+import user from './store/modules/user';
+import auth from './store/modules/auth';
 
-Vue.config.debug = true
+// Vue.config.debug = true;
 Vue.use(VueRouter);
 Vue.use(Vuex);
+
+// const store = new Vuex.Store({
+//   modules: {
+//     user,
+//     auth
+//   }
+// });
 
 new Vue({
   el: '#app',
