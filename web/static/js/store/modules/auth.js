@@ -33,7 +33,7 @@ const actions = {
     // });
     return ApiService.post('/sessions', { session: credentials}).then((response) => {
       console.log(response.data.user);
-      context.commit(SET_AUTH);
+      context.commit(SET_AUTH, response.data.user);
     });
   }
 };
@@ -43,8 +43,7 @@ const mutations = {
     state.isAuthenticated = true;
     state.user = user;
     state.errors = {};
-    console.log("muations " + state);
-    JwtService.saveToken(state.user.token);
+    JwtService.saveToken(state.user.first_name);
   }
 };
 

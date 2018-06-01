@@ -14,13 +14,6 @@ import auth from './store/modules/auth';
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-// const store = new Vuex.Store({
-//   modules: {
-//     user,
-//     auth
-//   }
-// });
-
 new Vue({
   el: '#app',
   router,
