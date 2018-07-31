@@ -4,8 +4,8 @@ import VueRouter from 'vue-router';
 import Login from './components/Login.vue';
 
 const routes = [
-    { path: '/login', component: Login },
-    { path: '/', component: Login }
+    { name: 'login', path: '/login', component: Login },
+    { name: '/', path: '/', component: Login }
 ];
 
 export default new VueRouter({

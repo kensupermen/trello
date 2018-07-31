@@ -23,27 +23,18 @@ const state = {
 
 const actions = {
   [LOGIN] (context, credentials) {
-    // return new Promise((reslove) => {
-    //   ApiService.post('/sessions', { session: credentials})
-    //     .then(({data}) => {
-    //       console.log("data = " + data.user)
-    //       context.commit(SET_AUTH, data.user)
-    //       reslove(data)
-    //     });
-    // });
     return ApiService.post('/sessions', { session: credentials}).then((response) => {
-      console.log(response.data.user);
-      context.commit(SET_AUTH, response.data.user);
+      context.commit(SET_AUTH, response.data);
     });
   }
 };
 
 const mutations = {
-  [SET_AUTH] (state, user) {
+  [SET_AUTH] (state, data) {
     state.isAuthenticated = true;
-    state.user = user;
+    state.user = data.user;
     state.errors = {};
-    JwtService.saveToken(state.user.first_name);
+    JwtService.saveToken(data.jwt);
   }
 };
 
