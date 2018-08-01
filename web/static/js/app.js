@@ -9,6 +9,7 @@ import router from './router.js';
 import store from './store';
 import user from './store/modules/user';
 import auth from './store/modules/auth';
+import socket from './services/socket';
 
 // Vue.config.debug = true;
 Vue.use(VueRouter);
