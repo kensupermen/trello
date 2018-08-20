@@ -36,3 +36,18 @@ body {
 .logo {
   width: 30px;
 }
+
+.main-container {
+  margin: 20px;
+}
+.boards-wrapper {
+  min-height: 800px;
+  background: rgb(0, 121, 191);
+}
+
+.board {
+  min-height: 5em;
+  padding: 1em;
+  background: #e2e4e6;
+  margin: 1em;
+};
