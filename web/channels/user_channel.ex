@@ -7,6 +7,5 @@ defmodule Trello.UserChannel do
   end
 
   def handle_in(event, msg, arg2) do
-    
   end
 end

@@ -4,6 +4,8 @@ defmodule Trello.User do
   @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
 
   schema "users" do
+    has_many :owned_boards, Trello.Board
+
     field :first_name, :string
     field :last_name, :string
     field :email, :string
