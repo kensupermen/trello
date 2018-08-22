@@ -11,7 +11,7 @@ export default {
   name: 'Board',
   methods: {
     onClick() {
-      console.log("Clicked on board!");
+      this.$router.push("/boards/1");
     }
   }
 };
