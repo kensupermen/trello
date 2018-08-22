@@ -1,5 +1,5 @@
 <template>
-<div class="main-container">
+<div class="container">
   <div class="boards-wrapper">
     <div class="row">
       <div class="col-sm-3">

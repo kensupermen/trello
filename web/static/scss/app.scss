@@ -1,7 +1,8 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
-  background-color: #fafafa;
+  background-color: #f8f9f9;
+  color: #333;
 }
 
 .tl-navbar {
@@ -42,12 +43,16 @@ body {
 }
 .boards-wrapper {
   min-height: 800px;
-  background: rgb(0, 121, 191);
 }
 
 .board {
   min-height: 5em;
   padding: 1em;
-  background: #e2e4e6;
+  background: rgb(0, 121, 191);
   margin: 1em;
+  color: #fff;
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+  }
 };

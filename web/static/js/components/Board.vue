@@ -1,5 +1,5 @@
 <template>
-<div class="board" @click="boardDetail">
+<div class="board" @click="onClick()">
   <h5>
     Free Time
   </h5>
@@ -10,7 +10,8 @@
 export default {
   name: 'Board',
   methods: {
-    boardDetail() {
+    onClick() {
+      console.log("Clicked on board!");
     }
   }
 };
