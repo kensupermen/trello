@@ -25,4 +25,9 @@ defmodule Trello.BoardController do
         |> render conn, "error.json", changeset: changeset
     end
   end
+
+  def show(conn, %{"id" => board_id}) do
+    board = Repo.get!(Board, 1)
+    render conn, "show.json", board: board
+  end
 end
