@@ -1,4 +1,3 @@
-require IEx
 defmodule Trello.BoardController do
   use Trello.Web, :controller
 

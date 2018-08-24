@@ -1,6 +1,8 @@
 defmodule Trello.Board do
   use Trello.Web, :model
 
+  @derive {Poison.Encoder, only: [:id, :name]}
+
   schema "boards" do
     has_many :user_boards, Trello.UserBoard
     has_many :members, through: [:user_boards, :user]
