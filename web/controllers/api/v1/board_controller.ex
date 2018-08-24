@@ -6,12 +6,10 @@ defmodule Trello.BoardController do
 
   def index(conn, _params) do
     owned_boards = Repo.all(Board)
-    IEx.pry
     render conn, "index.json", owned_boards: owned_boards
   end
 
   def create(conn, %{"board" => board_params}) do
-    IEx.pry
     current_user = Repo.get!(User, 1)
     changeset = current_user
       |> build_assoc(:owned_boards)
