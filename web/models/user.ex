@@ -5,6 +5,8 @@ defmodule Trello.User do
 
   schema "users" do
     has_many :owned_boards, Trello.Board
+    has_many :user_boards, Trello.UserBoard
+    has_many :boards, through: [:user_boards, :board]
 
     field :first_name, :string
     field :last_name, :string
