@@ -6,10 +6,6 @@
 <script>
 export default {
   name: 'Card',
-  methods: {
-    boardDetail() {
-    }
-  }
 };
 </script>
 
