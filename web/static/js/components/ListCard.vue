@@ -3,9 +3,10 @@
   <div class="cards-wrapper">
     <div class="row">
       <div class="col-sm-2 cards">
-        <h4 class="cards-header">Idea Box</h4>
-        <card class="canvas">Learning Phoenix Framework</card>
-        <a href="#" class="canvas-composer">Add another card</a>
+        <h5 class="cards-header">Idea Box</h5>
+        <card class="canvas" value="Learning Phoenix Framework"></card>
+        <card class="canvas" value="Read Rails in Action"></card>
+        <a href="#" class="canvas-composer"><i class="icon ion-md-add"></i> Add another card</a>
       </div>
     </div>
   </div>
@@ -29,7 +30,8 @@ export default {
     }
   },
   mounted() {
-    axios.get(API_URL + '/boards/1').then(response => {
+    console.log("id = " + this.$route.params.id);
+    axios.get(API_URL + '/boards/' + this.$route.params.id).then(response => {
       console.log(response);
     });
   },

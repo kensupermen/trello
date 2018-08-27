@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="board-container">
   <div class="boards-wrapper">
     <div class="row">
       <div class="col-sm-3" v-for="board in boards" :key="board.name">

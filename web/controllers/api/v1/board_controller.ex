@@ -27,7 +27,7 @@ defmodule Trello.BoardController do
   end
 
   def show(conn, %{"id" => board_id}) do
-    board = Repo.get!(Board, 1)
+    board = Repo.get!(Board, board_id)
     render conn, "show.json", board: board
   end
 end

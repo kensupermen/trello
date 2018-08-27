@@ -12,7 +12,7 @@ export default {
   props: ['board'],
   methods: {
     onClick() {
-      this.$router.push("/boards/1");
+      this.$router.push("/boards/" + this.board.id);
     }
   }
 };

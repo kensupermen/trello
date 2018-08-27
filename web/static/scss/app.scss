@@ -60,17 +60,20 @@ body {
 .canvas {
   min-height: 30px;
   background: #fff;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   margin: 8px 0px;
   max-width: 300px;
   text-decoration: none;
   color: #444;
+  padding: 5px 10px;
+  margin: 5px 0px;
 }
 
 .canvas-composer {
   text-decoration: none;
   color: #8c8c8c;
+  margin: 5px 0px;
 
   &:hover {
     color: #444;
@@ -80,8 +83,10 @@ body {
 .cards {
   background: #e2e4e6;
   border-radius: 3px;
-  margin: 0 4px;
+  margin: 0px 5px;
   width: 272px;
+  padding: 10px 15px;
+
 
   &.cards-header {
     padding: 10px 8px;

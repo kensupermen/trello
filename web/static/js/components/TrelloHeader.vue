@@ -1,6 +1,6 @@
 <template>
 <header class="container-fluid tl-navbar">
-  <div class="container">
+  <div class="header-wrapper">
     <img alt="logo" src="./images/logo.png" class="logo"/>
     <span>Trello</span>
     <div class="right-side">
