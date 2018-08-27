@@ -28,6 +28,8 @@ defmodule Trello.Router do
       post "/sessions", SessionController, :create
       delete "/sessions", SessionController, :delete
       resources "/boards", BoardController, only: [:index, :create, :show]
+      post "/boards/:id/list", BoardController, :create_list
+      post "/boards/:id/list/:list_id/card", BoardController, :create_card
     end
 
   end

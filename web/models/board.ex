@@ -6,7 +6,8 @@ defmodule Trello.Board do
   schema "boards" do
     has_many :user_boards, Trello.UserBoard
     has_many :members, through: [:user_boards, :user]
-    
+    has_many :lists, Trello.List
+
     field :name, :string
     belongs_to :user, Trello.User, foreign_key: :user_id
 

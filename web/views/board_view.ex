@@ -16,4 +16,12 @@ defmodule Trello.BoardView do
     end)
     %{ errors: errors }
   end
+
+  def render("list.json", %{list: list}) do
+    list
+  end
+
+  def render("card.json", %{card: card}) do
+    card
+  end
 end

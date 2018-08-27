@@ -1,7 +1,7 @@
 defmodule Trello.BoardController do
   use Trello.Web, :controller
 
-  alias Trello.{Repo, Board, User}
+  alias Trello.{Repo, Board, User, List, Card}
 
   def index(conn, _params) do
     owned_boards = Repo.all(Board)
@@ -29,5 +29,45 @@ defmodule Trello.BoardController do
   def show(conn, %{"id" => board_id}) do
     board = Repo.get!(Board, board_id)
     render conn, "show.json", board: board
+  end
+
+  def create_list(conn, %{"list" => list_params}) do
+    board = Repo.get!(Board, list_params["board_id"])
+    
+    changeset = board
+    |> build_assoc(:lists)
+    |> List.changeset(list_params)
+
+    case Repo.insert(changeset) do
+      {:ok, _list} ->
+        conn
+        |> put_status(:created)
+        |> render("list.json", list: list_params)
+      {:error, changeset} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> render conn, "error.json", changeset: changeset
+    end
+  end
+
+  def create_card(conn, %{"card" => card_params}) do
+    board = Repo.get!(Board, card_params["board_id"])
+
+    changeset = board
+    |> assoc(:lists)
+    |> Repo.get!(card_params["list_id"])
+    |> build_assoc(:cards)
+    |> Card.changeset(card_params)
+
+    case Repo.insert(changeset) do
+      {:ok, _card} ->
+        conn
+        |> put_status(:created)
+        |> render("card.json", card: card_params)
+      {:error, changeset} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> render conn, "error.json", changeset: changeset
+    end
   end
 end

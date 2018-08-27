@@ -6,7 +6,8 @@ defmodule Trello.List do
   schema "lists" do
     field :name, :string
     belongs_to :board, Trello.Board, foreign_key: :board_id
-
+    has_many :cards, Trello.Card
+    
     timestamps()
   end
 
