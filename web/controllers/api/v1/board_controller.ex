@@ -50,6 +50,11 @@ defmodule Trello.BoardController do
     end
   end
 
+  def show_list(conn, %{"list_id" => list_id}) do
+    lists = Repo.get(List, 1)
+    render conn, "list.json", lists: lists
+  end
+
   def create_card(conn, %{"card" => card_params}) do
     board = Repo.get!(Board, card_params["board_id"])
 

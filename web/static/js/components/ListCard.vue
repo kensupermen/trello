@@ -31,7 +31,7 @@ export default {
   },
   mounted() {
     console.log("id = " + this.$route.params.id);
-    axios.get(API_URL + '/boards/' + this.$route.params.id).then(response => {
+    axios.get(API_URL + '/boards/2/list/1').then(response => {
       console.log(response);
     });
   },

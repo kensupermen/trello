@@ -21,6 +21,10 @@ defmodule Trello.BoardView do
     list
   end
 
+  def render("lists.json", %{lists: lists}) do
+    lists
+  end
+
   def render("card.json", %{card: card}) do
     card
   end
