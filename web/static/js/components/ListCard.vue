@@ -2,11 +2,11 @@
 <div class="main-container">
   <div class="cards-wrapper">
     <div class="row">
-      <div class="col-sm-2 cards" v-for="card in cards" :key="card.id">
-        <h5 class="cards-header">Idea Box</h5>
-        <card class="canvas" value="Learning Phoenix Framework"></card>
-        <card class="canvas" value="Read Rails in Action"></card>
-        <card class="canvas" value="card.name"></card>
+      <h5 class="cards-header">{{ listName }}</h5>
+      <div class="col-sm-2 cards" >
+        <div v-for="card in cards" :key="card.id">
+          <card class="canvas" :value="card.name"></card>
+        </div>
         <a href="#" class="canvas-composer"><i class="icon ion-md-add"></i> Add another card</a>
       </div>
     </div>
@@ -28,12 +28,14 @@ export default {
   data() {
     return {
       cards: [],
+      listName: "test",
     }
   },
   mounted() {
-    console.log("id = " + this.$route.params.id);
-    axios.get(API_URL + '/boards/' + this.$route.params.id).then(response => {
-      console.log(response);
+    axios.get(API_URL + '/lists/1').then(response => {
+      console.log(response.data);
+      this.cards = response.data.cards;
+      this.listName = response.data.list.name;
     });
   },
 };
