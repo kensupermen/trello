@@ -7,7 +7,10 @@ defmodule Trello.BoardView do
   end
 
   def render("show.json", %{board: board}) do
-    board
+    %{
+      board: board,
+      lists: board.lists
+    }
   end
 
   def render("error.json", %{changeset: changeset}) do
@@ -18,14 +21,6 @@ defmodule Trello.BoardView do
   end
 
   def render("list.json", %{list: list}) do
-    list
-  end
-
-  def render("lists.json", %{lists: lists}) do
-    lists
-  end
-
-  def render("card.json", %{card: card}) do
-    card
+    %{ cards: list.cards }
   end
 end

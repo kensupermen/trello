@@ -27,8 +27,13 @@ defmodule Trello.BoardController do
   end
 
   def show(conn, %{"id" => board_id}) do
-    board = Repo.get!(Board, board_id)
+    board = Repo.get!(Board, board_id) |> Repo.preload(:lists)
     render conn, "show.json", board: board
+  end
+
+  def list(conn, %{"id" => list_id}) do
+    list = Repo.get!(List, list_id) |> Repo.preload(:cards)
+    render conn, "list.json", list: list
   end
 
   def create_list(conn, %{"list" => list_params}) do
